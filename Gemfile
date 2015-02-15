@@ -8,6 +8,7 @@ gem 'middleman-livereload', '~> 3.4.2'
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
 gem "slim"
+gem "nokogiri"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
