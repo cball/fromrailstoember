@@ -7,29 +7,34 @@
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
-
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
-  # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.permalink = "{number}-{title}.html"
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.layout = "article_layout"
   # blog.taglink = "tags/{tag}.html"
-  # blog.layout = "layout"
-  # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  # blog.default_extension = ".markdown"
+  blog.default_extension = ".md"
+end
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
-
-  # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = 'fromrailstoember.com'
+  deploy.path   = '/src/fromrailstoember.com'
+  deploy.user  = 'root'
+  # deploy.port  = 5309 # ssh port, default: 22
+  # deploy.clean = true # remove orphaned files on remote host, default: false
+  # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
 end
 
 page "/feed.xml", layout: false
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+
+activate :syntax
 
 ###
 # Compass
@@ -98,7 +103,5 @@ configure :build do
   activate :asset_hash
   activate :relative_assets
   activate :gzip, exts: %w(.js .css .html .htm .svg .ttf .otf .woff .eot)
-  activate :imageoptim do |options|
-    options.pngout_options = false
-  end
+  activate :imageoptim
 end

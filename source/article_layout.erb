@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'app' %>
   </head>
-  <body>
+  <body class="article-layout">
     <!-- <nav class="navbar navbar&#45;fixed&#45;top"> -->
     <!--   <div class="container"> -->
     <!--     <div class="navbar&#45;header"> -->
@@ -18,26 +18,15 @@
     <!-- </nav> -->
 
     <div class="blocks">
-      <div class="rails"><%= image_tag 'rails.png' %></div>
-      <div class="home-block ember"><%= image_tag 'ember.png' %></div>
-      <i class="fa fa-arrow-right"></i>
+      <div class="rails"></div>
+      <div class="home-block ember"></div>
     </div>
 
     <div class="announcement">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h1>From Rails to Ember</h1>
-            <p>Are you a Rails developer interested in Ember?<br>
-            We're creating your roadmap.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div id="signup" class="col-md-10 col-md-offset-1">
-            <h2>A cheatsheet and guide are on their way.</h2>
-
-            <p>For now, check out our favorite tips below.</p>
+            <h1>Tip #<%= current_article.data[:number] %> - <%= current_article.title %></h1>
           </div>
         </div>
       </div>
@@ -46,6 +35,26 @@
     <div class="container">
       <div id="main" role="main">
         <%= yield %>
+        <div id="article-nav">
+          <% prev_article = current_article.previous_article %>
+          <% next_article = current_article.next_article %>
+
+          <% if prev_article %>
+            <div class="pull-left">
+              <% link_to prev_article.url do %>
+                <i class="fa fa-chevron-left"></i> Prev Tip
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if next_article %>
+            <div class="pull-right">
+              <% link_to next_article.url do %>
+                Next Tip <i class="fa fa-chevron-right"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </body>

@@ -1,0 +1,29 @@
+.article-layout {
+  .blocks > div {
+    padding: 10px 0;
+  }
+
+  .announcement {
+    padding: 40px 0;
+  }
+
+  #main {
+    font-size: 1.2em;
+    line-height: 1.62em;
+    text-align: justify;
+  }
+}
+
+#article-nav {
+  margin-top: 60px;
+}
+
+// code blocks
+pre.highlight {
+  margin: 30px 0;
+}
+
+code {
+  background: none;
+  color: #E14A30;
+}

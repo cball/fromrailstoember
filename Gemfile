@@ -7,8 +7,10 @@ gem "middleman-blog", "~> 3.5.3"
 gem 'middleman-livereload', '~> 3.4.2'
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
-gem "slim"
+gem "middleman-syntax"
+gem "redcarpet"
 gem "nokogiri"
+gem 'middleman-deploy', '~> 1.0'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
