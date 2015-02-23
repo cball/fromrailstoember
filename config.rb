@@ -24,6 +24,7 @@ activate :deploy do |deploy|
   deploy.host   = 'fromrailstoember.com'
   deploy.path   = '/src/fromrailstoember.com'
   deploy.user  = 'root'
+  deploy.build_before = true
   # deploy.clean = true # remove orphaned files on remote host, default: false
   # deploy.port  = 5309 # ssh port, default: 22
   # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
@@ -103,5 +104,7 @@ configure :build do
   activate :asset_hash
   activate :relative_assets
   activate :gzip, exts: %w(.js .css .html .htm .svg .ttf .otf .woff .eot)
-  activate :imageoptim
+  activate :imageoptim do |options|
+    options.manifest = false
+  end
 end
