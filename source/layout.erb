@@ -17,36 +17,43 @@
     <!--   </div> -->
     <!-- </nav> -->
 
-    <div class="blocks">
-      <div class="rails"><%= image_tag 'rails.png' %></div>
-      <div class="home-block ember"><%= image_tag 'ember.png' %></div>
-      <i class="fa fa-arrow-right"></i>
-    </div>
+    <div id="content-wrapper">
+      <div class="blocks">
+        <div class="rails"><%= image_tag 'rails.png' %></div>
+        <div class="home-block ember"><%= image_tag 'ember.png' %></div>
+        <i class="fa fa-arrow-right"></i>
+      </div>
 
-    <div class="announcement">
+      <div class="announcement">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h1>From Rails to Ember</h1>
+              <p>Are you a Rails developer interested in Ember?<br>
+              We're creating your roadmap.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="signup" class="col-md-10 col-md-offset-1">
+              <h2>A cheatsheet and guide are on their way.</h2>
+
+              <p>For now, check out our favorite tips below.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h1>From Rails to Ember</h1>
-            <p>Are you a Rails developer interested in Ember?<br>
-            We're creating your roadmap.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div id="signup" class="col-md-10 col-md-offset-1">
-            <h2>A cheatsheet and guide are on their way.</h2>
-
-            <p>For now, check out our favorite tips below.</p>
-          </div>
+        <div id="main" role="main">
+          <%= yield %>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div id="main" role="main">
-        <%= yield %>
-      </div>
+      <%= partial 'no-more' %>
+
+      <%= partial 'footer' %>
+
     </div>
   </body>
 </html>

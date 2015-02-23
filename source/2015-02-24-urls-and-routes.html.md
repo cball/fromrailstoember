@@ -1,7 +1,8 @@
 ---
 title: URLs and Routes
-date: 2015-02-12 01:44 UTC
+date: 2015-02-24
 number: 3
+draft: true
 ---
 
 In Rails, the Router maps URLs directly to a controller action. We have a file in Rails called routes.rb that contains these mappings and determines our URL structure (HTTP Method, whether they are nested, parameters, etc).

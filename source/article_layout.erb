@@ -17,45 +17,54 @@
     <!--   </div> -->
     <!-- </nav> -->
 
-    <div class="blocks">
-      <div class="rails"></div>
-      <div class="home-block ember"></div>
-    </div>
+    <div id="content-wrapper">
 
-    <div class="announcement">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <h1>Tip #<%= current_article.data[:number] %> - <%= current_article.title %></h1>
+      <div class="blocks">
+        <div class="rails"></div>
+        <div class="home-block ember"></div>
+      </div>
+
+      <div class="announcement">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h1>Tip #<%= current_article.data[:number] %> - <%= current_article.title %></h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div id="main" role="main">
-        <%= yield %>
-        <div id="article-nav">
-          <% prev_article = current_article.previous_article %>
-          <% next_article = current_article.next_article %>
-
-          <% if prev_article %>
-            <div class="pull-left">
-              <% link_to prev_article.url do %>
-                <i class="fa fa-chevron-left"></i> Prev Tip
-              <% end %>
-            </div>
+      <div class="container">
+        <div id="main" role="main">
+          <% if current_article.data[:draft] %>
+            <h3 style="color: #A72C38;">DRAFT!</h3>
           <% end %>
+          <%= yield %>
+          <div id="article-nav">
+            <% prev_article = current_article.previous_article %>
+            <% next_article = current_article.next_article %>
 
-          <% if next_article %>
-            <div class="pull-right">
-              <% link_to next_article.url do %>
-                Next Tip <i class="fa fa-chevron-right"></i>
-              <% end %>
-            </div>
-          <% end %>
+            <% if prev_article %>
+              <div class="pull-left">
+                <% link_to prev_article.url do %>
+                  <i class="fa fa-chevron-left"></i> Prev Tip
+                <% end %>
+              </div>
+            <% end %>
+
+            <% if next_article %>
+              <div class="pull-right">
+                <% link_to next_article.url do %>
+                  Next Tip <i class="fa fa-chevron-right"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
+
+      <%= partial 'footer' %>
+
     </div>
   </body>
 </html>

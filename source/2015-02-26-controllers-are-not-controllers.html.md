@@ -1,7 +1,8 @@
 ---
 title: Controllers are not Controllers
-date: 2015-02-16 01:45 UTC
+date: 2015-02-26
 number: 4
+draft: true
 ---
 
 Controllers in Rails and controllers in Ember have quite a few differences. In Rails, controllers are responsible for fetching data from your models. As a Rails developer, you’ve probably heard the phrase “fat models skinny controllers.” This mantra works great in the Rails ecosystem but is the opposite of what you’ll do in Ember.
@@ -13,7 +14,7 @@ Here’s a practical example:
 ``` javascript
 // app/routes/some-route.js
 export default Ember.Route.extend({
-  model: function() {  
+  model: function() {
     return this.store.find('filter-option');
   }
 });

@@ -4,6 +4,9 @@
     <% articles.each_with_index do |article, i| %>
       <div class="index-article">
         <h2><%= link_to "Tip ##{article.data[:number]} - #{article.title}", article %></h2>
+        <% if article.data[:draft] %>
+          <h3 style="color: #A72C38;">DRAFT!</h3>
+        <% end %>
         <%= article.summary() %>
       </div>
     <% end %>
