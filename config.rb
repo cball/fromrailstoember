@@ -24,8 +24,8 @@ activate :deploy do |deploy|
   deploy.host   = 'fromrailstoember.com'
   deploy.path   = '/src/fromrailstoember.com'
   deploy.user  = 'root'
-  # deploy.port  = 5309 # ssh port, default: 22
   # deploy.clean = true # remove orphaned files on remote host, default: false
+  # deploy.port  = 5309 # ssh port, default: 22
   # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
 end
 

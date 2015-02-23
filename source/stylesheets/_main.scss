@@ -138,16 +138,16 @@ footer {
 #no-more {
   text-align: center;
   background: $orange;
-  background: #b9834b;
-  background: #f9e5cd;
+  background: $peach;
   padding: 40px;
   border-radius: 2px;
   color: $almost-black;
 
   a {
     border: 2px solid $almost-black;
-    border: 2px solid #b9834b;
-    color: #b9834b;
+    // border: 2px solid $brown;
+    // color: $brown;
+    color: $almost-black;
     margin-top: 10px;
     font-size: 18px;
   }
