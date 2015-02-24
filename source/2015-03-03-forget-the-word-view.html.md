@@ -1,8 +1,7 @@
 ---
 title: Forget the Word “View”
-date: 2015-03-03
-number: 5
-draft: true
+date: 2015-03-03 9:00am EST
+number: 6
 ---
 
 In Rails a view is typically written in erb. In Ember, these are called templates and are written in Handlebars.
