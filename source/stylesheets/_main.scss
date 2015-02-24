@@ -155,6 +155,10 @@ a.btn, input[type="submit"] {
   text-transform: uppercase;
 }
 
+input[type="submit"][disabled] {
+  opacity: 0.4;
+}
+
 .last-updated {
   text-align: center;
   font-size: 14px;
