@@ -45,7 +45,7 @@
 
       <div class="container">
         <div id="main" role="main">
-          <% if current_article.data[:draft] %>
+          <% unless current_article.published? %>
             <h3 style="color: #A72C38;">DRAFT!</h3>
           <% end %>
           <%= yield %>
