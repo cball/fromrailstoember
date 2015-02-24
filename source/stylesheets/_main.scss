@@ -142,15 +142,17 @@ footer {
   padding: 40px;
   border-radius: 2px;
   color: $almost-black;
+}
 
-  a {
-    border: 2px solid $almost-black;
-    // border: 2px solid $brown;
-    // color: $brown;
-    color: $almost-black;
-    margin-top: 10px;
-    font-size: 18px;
-  }
+a.btn, input[type="submit"] {
+  border: 2px solid $almost-black;
+  background: none;
+  // border: 2px solid $brown;
+  // color: $brown;
+  color: $almost-black;
+  margin-top: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .last-updated {
@@ -158,4 +160,21 @@ footer {
   font-size: 14px;
   opacity: 0.5;
   margin-top: 10px;
+}
+
+#mailing-list {
+  input[type="submit"] {
+    width: 100%;
+  }
+}
+
+#contact {
+  .popover-input {
+    width: 290px;
+    max-width: 100%;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
 }

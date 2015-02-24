@@ -1,12 +1,18 @@
 $(function() {
-  var options = {
+
+  $('.popover-trigger').popover({
     html: true,
     placement: 'top',
-    content: $('#email-signup ~ .content-for-popover').html()
-  };
+    content: function() {
+      return $(this).siblings('.content-for-popover').html();
+    }
+  });
 
-  $('#email-signup').popover(options);
-  $('#email-signup').on('show.bs.popover', function() {
+  $('#list-signup-button').on('show.bs.popover', function() {
     window.analytics.track('Clicked Newsletter Signup');
+  });
+
+  $('#send-tip-link').on('show.bs.popover', function() {
+    window.analytics.track('Clicked send tip in footer');
   });
 });

@@ -1,3 +1,13 @@
 .content-for-popover {
   display: none;
 }
+
+.popover-trigger {
+  cursor: pointer;
+}
+
+.popover-content {
+  textarea {
+    height: 190px;
+  }
+}
