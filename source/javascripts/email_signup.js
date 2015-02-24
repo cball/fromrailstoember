@@ -5,5 +5,7 @@ $(function() {
     content: $('#email-signup ~ .content-for-popover').html()
   };
 
-  $('#email-signup').popover(options);
+  $('#email-signup').popover(options).on('show.bs.popover', function() {
+    window.analytics.track('Clicked Newsletter Signup');
+  };
 });
