@@ -4,6 +4,7 @@
   }
 
   .announcement {
+    position: relative;
     padding: 40px 0;
   }
 
@@ -26,4 +27,15 @@ pre.highlight {
 code {
   background: none;
   color: #E14A30;
+}
+
+a.all-tips-link {
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+
+  &:hover {
+    color: darken(#fff, 10%);
+  }
 }

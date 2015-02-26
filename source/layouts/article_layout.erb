@@ -30,6 +30,9 @@
       </div>
 
       <div class="announcement">
+        <% link_to '/', class: 'all-tips-link' do %>
+          <i class="fa fa-chevron-left"></i> All Tips
+        <% end %>
         <div class="container">
           <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -67,6 +70,10 @@
           </div>
         </div>
       </div>
+
+      <% if next_article.nil? %>
+        <%= partial 'no-more' %>
+      <% end %>
 
       <%= partial 'footer' %>
 
