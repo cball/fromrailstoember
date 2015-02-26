@@ -5,7 +5,9 @@
       <p>Not to fear, there is more on the way. Sign up for the newsletter.</p>
       <a class="btn popover-trigger" id="list-signup-button">JOIN THE LIST</a>
       <div class="content-for-popover">
-        <% form_tag '', id: 'mailing-list' do %>
+        <% form_tag 'http://mailchimper.herokuapp.com/subscribe', id: 'mailing-list' do %>
+          <%= hidden_field_tag :id, value: '955d548aa2', id: 'list-id' %>
+
           <div class="form-group">
             <%= text_field_tag :name, placeholder: 'Name', class: 'form-control' %>
           </div>

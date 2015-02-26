@@ -20,18 +20,11 @@ $(function() {
   });
 
   $('footer').on('submit', '.contact-form', function(event) {
-    event.preventDefault();
     var form = $(this);
-    var submitButton = form.find('input[type="submit"]');
-    submitButton.prop('disabled', true);
+    event.preventDefault();
+    disableSubmitButton(form);
 
-    var postData ={};
-    var inputs = form.serializeArray();
-    $(inputs).each(function(index, input) {
-      postData[input.name] = input.value;
-    });
-
-    $.post(form.attr('action'), postData, function() {
+    $.post(form.attr('action'), postDataForForm(form), function() {
         $('#contact-source').after("<div class='popup-thanks'>Thanks for the message!</div>");
         submitButton.prop('disabled', false);
 
@@ -41,4 +34,44 @@ $(function() {
       }
     );
   });
+
+  $('#no-more').on('submit', '#mailing-list', function(event) {
+    var form = $(this);
+    event.preventDefault();
+    disableSubmitButton(form);
+
+    $.post(form.attr('action'), postDataForForm(form), function() {
+        $('#list-id').after("<div class='popup-thanks'>Thanks for subscribing! You should get a welcome email shortly.</div>");
+        enableSubmitButton(form);
+
+        setTimeout(function() {
+          $('#list-signup-button').popover('hide');
+        }, 2000);
+      }
+    )
+    .fail(function(data) {
+      $('#list-id').after("<div class='popup-thanks'>" + data.responseText + "</div>");
+      enableSubmitButton(form);
+    });
+  });
+
+  var disableSubmitButton = function(form) {
+    var submitButton = form.find('input[type="submit"]');
+    submitButton.prop('disabled', true);
+  }
+
+  var enableSubmitButton = function(form) {
+    var submitButton = form.find('input[type="submit"]');
+    submitButton.prop('disabled', false);
+  }
+
+  var postDataForForm = function(form) {
+    var postData ={};
+    var inputs = form.serializeArray();
+    $(inputs).each(function(index, input) {
+      postData[input.name] = input.value;
+    });
+
+    return postData;
+  }
 });
