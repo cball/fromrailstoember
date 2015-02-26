@@ -135,6 +135,19 @@ footer {
   }
 }
 
+.echobind-logo {
+  @include text-hide();
+  background-image: url(image-path('echobind-logo-white.png'));
+  width: 82px;
+  height: 17px;
+  display: block;
+  margin: 0 auto;
+
+  .article-layout & {
+    background-image: url(image-path('echobind-logo-black.png'));
+  }
+}
+
 #no-more {
   text-align: center;
   background: $orange;
