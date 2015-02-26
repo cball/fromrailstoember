@@ -11,7 +11,3 @@ In Ember, Controllers are Singletons, which means they are long-lived and they a
 Most of the time, this is good - imagine implementing something like a multi-step wizard. Because of the above behavior, a user could navigate to another page, hit the back button and be right back where they left off.
 
 However, it's also good to keep this behavior in the back of your mind. Since Ember apps having long-running state, it's easier to run into visual bugs where incorrect (usually previous) state displays to the user.
-
-You're also a bit more likely to run into memory issues. If you happen to have a memory leak somewhere in your app, it will impact user performance until they reload the page. We don't have the benefit of starting fresh with every request.
-
-Remember, Ember Controllers are Singletons, just keep it in mind.

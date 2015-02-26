@@ -8,7 +8,7 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
   blog.permalink = "{number}-{title}.html"
-  blog.sources = "{year}-{month}-{day}-{title}.html"
+  blog.sources = "{number}-{title}.html"
   blog.layout = "article_layout"
   # blog.taglink = "tags/{tag}.html"
   blog.summary_separator = /(READMORE)/
