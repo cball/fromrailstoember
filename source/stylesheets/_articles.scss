@@ -24,6 +24,7 @@
 }
 
 #article-nav {
+  @include clearfix;
   margin-top: 60px;
 }
 
