@@ -6,12 +6,20 @@
   .announcement {
     position: relative;
     padding: 40px 0;
+
+    h1 {
+      font-size: 3em;
+      max-width: 15em;
+      margin: auto;
+    }
   }
 
   #main {
     font-size: 1.2em;
     line-height: 1.62em;
     text-align: justify;
+    max-width: 35em;
+    margin: auto;
   }
 }
 

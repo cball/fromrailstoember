@@ -26,7 +26,7 @@ $(function() {
 
     $.post(form.attr('action'), postDataForForm(form), function() {
         $('#contact-source').after("<div class='popup-thanks'>Thanks for the message!</div>");
-        submitButton.prop('disabled', false);
+        enableSubmitButton(form);
 
         setTimeout(function() {
           $('#send-tip-link').popover('hide');
