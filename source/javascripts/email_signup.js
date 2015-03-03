@@ -66,12 +66,6 @@ $(function() {
   }
 
   var postDataForForm = function(form) {
-    var postData ={};
-    var inputs = form.serializeArray();
-    $(inputs).each(function(index, input) {
-      postData[input.name] = input.value;
-    });
-
-    return postData;
+    return form.serialize();
   }
 });
