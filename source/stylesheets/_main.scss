@@ -191,14 +191,14 @@ footer {
 
 .echobind-logo {
   @include text-hide();
-  background-image: url(image-path('echobind-logo-white.png'));
+  @include img-retina(image-path('echobind-logo-white.png'), image-path('echobind-logo-white@2x.png'), 82px, 17px);
+  display: block;
   width: 82px;
   height: 17px;
-  display: block;
   margin: 0 auto;
 
   .article-layout & {
-    background-image: url(image-path('echobind-logo-black.png'));
+    @include img-retina(image-path('echobind-logo-black.png'), image-path('echobind-logo-black@2x.png'), 82px, 17px);
   }
 }
 
