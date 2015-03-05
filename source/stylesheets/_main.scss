@@ -33,21 +33,37 @@ h1, h2, h3, h4, h5, h6, h7 {
   .fa-arrow-right {
     position: absolute;
     left: 0;
+    top: 35%;
     right: 0;
-    font-size: 150px;
-    top: 30%;
     color: #fff;
+    font-size: 80px;
+
+    @media (min-width: $screen-md-min) {
+      top: 30%;
+      font-size: 150px;
+    }
   }
 
   img {
-    height: 308px;
+    height: 120px;
+    max-width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      height: 308px;
+    }
   }
+
 
   & > div {
     float: left;
     width: 50%;
-    padding: 80px 0;
+    padding: 60px 0;
+
+    @media (min-width: $screen-md-min) {
+      padding: 80px 0;
+    }
   }
+
 
   .rails {
     background: $red;
@@ -61,21 +77,45 @@ h1, h2, h3, h4, h5, h6, h7 {
 .announcement {
   background: $almost-black;
   text-align: center;
-  padding: 60px;
   color: #fff;
+  padding: 20px;
 
   h1 {
-    font-size: 3.5em;
     margin-bottom: 16px;
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 26px;
   }
 
   p {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 60px;
+
+    h1 {
+      font-size: 3.5em;
+    }
+
+    h2 {
+      font-size: 34px;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
   }
 }
 
 #signup {
-  margin-top: 64px;
+  margin-top: 40px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 64px;
+  }
 
   p {
     margin-left: auto;
@@ -100,18 +140,26 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 #content-wrapper {
   position: relative;
-  padding-bottom: 340px;
+  padding-bottom: 400px;
   min-height: 100%;
+
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 340px;
+  }
 }
 
 footer {
   background: $almost-black;
-  padding: 40px;
+  padding: 40px 10px;
   color: #fff;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+
+  @media (min-width: $screen-md-min) {
+    padding: 40px;
+  }
 
   .article-layout & {
     background: none;
@@ -128,6 +176,12 @@ footer {
 
   .tagline {
     text-align: center;
+    width: 220px;
+    margin: 0 auto;
+
+    @media (min-width: $screen-md-min) {
+      width: auto;
+    }
 
     p {
       font-size: 14px;

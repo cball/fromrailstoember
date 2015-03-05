@@ -2,43 +2,36 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <div class="row">
-          <div class="col-md-12">
-            <h4>Do you have a question or tip suggestion?</h4>
-            <p>
-              <div class="content-for-popover">
-                <% form_tag 'http://form-mailer.herokuapp.com/mail', id: 'contact', class: 'contact-form' do %>
-                  <%= hidden_field_tag :subject, value: "[from rails to ember] contact form" %>
-                  <%= hidden_field_tag :redirect_to, value: "xhr" %>
-                  <%= hidden_field_tag :source, value: 'Send it in! (footer)', id: 'contact-source' %>
+        <h4>Do you have a question or tip suggestion?</h4>
+        <div class="content-for-popover">
+          <% form_tag 'http://form-mailer.herokuapp.com/mail', id: 'contact', class: 'contact-form' do %>
+            <%= hidden_field_tag :subject, value: "[from rails to ember] contact form" %>
+            <%= hidden_field_tag :redirect_to, value: "xhr" %>
+            <%= hidden_field_tag :source, value: 'Send it in! (footer)', id: 'contact-source' %>
 
-                  <div class="form-group">
-                    <div class="popover-input">
-                      <%= text_field_tag :name, placeholder: 'Name', class: 'form-control' %>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="popover-input">
-                      <%= email_field_tag :email, placeholder: 'Email', class: 'form-control' %>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="popover-input">
-                      <%= text_area_tag :message, placeholder: 'Your question, tip, or suggestion...', class: 'form-control' %>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <%= submit_tag 'SEND', class: 'btn' %>
-                  </div>
-
-                <% end %>
+            <div class="form-group">
+              <div class="popover-input">
+                <%= text_field_tag :name, placeholder: 'Name', class: 'form-control' %>
               </div>
+            </div>
+            <div class="form-group">
+              <div class="popover-input">
+                <%= email_field_tag :email, placeholder: 'Email', class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="popover-input">
+                <%= text_area_tag :message, placeholder: 'Your question, tip, or suggestion...', class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= submit_tag 'SEND', class: 'btn' %>
+            </div>
 
-              <a class="popover-trigger" id="send-tip-link">Send it in!</a> From Rails to Ember aims to be the best resource for Rails developers interested in Ember, regardless of experience level.
-
-            </p>
-          </div>
+          <% end %>
         </div>
+
+        <a class="popover-trigger" id="send-tip-link">Send it in!</a> From Rails to Ember aims to be the best resource for Rails developers interested in Ember, regardless of experience level.
 
         <hr>
 
