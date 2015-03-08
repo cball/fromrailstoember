@@ -1,6 +1,6 @@
 ---
 title: You Already Understand Models
-date: 2015-03-08 09:00 EST
+date: 2015-03-08 08:00 EST
 number: 5
 ---
 
@@ -15,7 +15,7 @@ In both frameworks, models:
 In Rails, these responsibilities are handled by ActiveRecord and in Ember they are handled by Ember Data.
 
 ### Defining Relationships
-When defining relationships in Ember models, you’ll follow a similar process to Rails. The following should feel pretty familiar:
+When defining relationships in Ember models, you’ll follow a similar process to Rails:
 
 ~~~ruby
 # Rails
@@ -67,7 +67,7 @@ Just like in Rails, when `save()` is called, Ember Data knows if the record need
 
 ### Handling Validation Errors
 
-When calling `save()`, the server may return errors describing what went wrong. Ember Data provides support for these errors out of the box[^active-model-adapter]. Let’s look at how you would log out error messages from a failed save of a user:
+When calling `save()`, the server may return errors describing what went wrong. Ember Data provides support for these errors out of the box[^active-model-adapter]. Let’s look at how to log out error messages from a failed save of a user record:
 
 [^active-model-adapter]: Errors are supported out of the box if you use the `ActiveModelAdapter` in your application. Since you’re coming from Rails and likely using it for your API, your app should use this adapter.
 
@@ -92,7 +92,7 @@ user.save().catch(function() {
 // [{attribute: "firstName", message: "can't be blank"}]
 ~~~
 
-When Ember receives an error response from an API after calling `save()`, it will throw an error. This behavior is similar to calling `save!` in Rails. Chaining `catch()` on the end of `save()` will allow you to handle the error.
+When Ember receives an error response (anything not in the 2xx range) from an API after calling `save()`, it will throw an error. This behavior is similar to calling `save!` in Rails. Chaining `catch()` on the end of `save()` will allow you to handle the error.
  
 Models in Ember have many similarities and some minor differences to their Rails counterparts. As a Rails developer, you probably already understand them!
 
