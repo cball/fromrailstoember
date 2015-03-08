@@ -10,7 +10,7 @@ In Ember, the **route fetches data** and provides it to the controller. It is th
 
 Here’s an example:
 
-``` javascript
+~~~ javascript
 // app/routes/categories/index.js
 export default Ember.Route.extend({
   model: function() {
@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
     }
   }
 });
-```
+~~~
 
 This example fetches categories from an API. The route fetches data using the `model` hook, which by default will set the returned value to a property called `model` on the controller.
 

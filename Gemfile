@@ -8,7 +8,6 @@ gem 'middleman-livereload', '~> 3.4.2'
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
 gem "middleman-syntax"
-gem "redcarpet"
 gem "nokogiri"
 gem 'middleman-deploy', '~> 1.0'
 
