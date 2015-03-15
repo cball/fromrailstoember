@@ -9,7 +9,7 @@ Models in Rails and models in Ember look pretty similar. The major difference is
 In both frameworks, models:
 
 * Define Relationships
-* Coordinate Persistance
+* Coordinate Persistence
 * Handle Validation Errors
 
 In Rails, these responsibilities are handled by ActiveRecord and in Ember they are handled by Ember Data.
@@ -45,7 +45,7 @@ Syntax differences aside, Ember Data supports most of the same relationship type
 
 Ember Data also has [other](http://emberjs.com/guides/models/defining-models/#toc_explicit-inverses) [ways](http://emberjs.com/guides/models/defining-models/#toc_reflexive-relation) to define more complicated relationships.
 
-### Coordinating Persistance
+### Coordinating Persistence
 In Rails, records are persisted to a database and in Ember records are persisted to an API. Technically, when calling `model.save()`, Ember Data uses an adapter to determine how to make the network request and serialize attributes to JSON. Since we’re focusing on models, let’s ignore that detail for now and compare how we would update a user’s name.
 
 ~~~ruby
