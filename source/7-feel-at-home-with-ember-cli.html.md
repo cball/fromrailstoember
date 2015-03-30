@@ -10,13 +10,23 @@ You’re used to something similar with the CLI provided by Rails, so many of th
 
 Example CLI commands include:
 
-| Rails | Ember | Shortcut |
-|-------|-------|----------|
-| `rails new myapp` | `ember new myapp` | |
-| `rails server` | `ember server` | s |
-| `rails generate model user` | `ember generate model user` | g |
-| `rails destroy model user` | `ember destroy model user` | d |
-| `rake test` or `rspec spec` | `ember test` or /tests in browser | |
+~~~bash
+# Rails
+rails new myapp
+rails server
+rails generate model user
+rails destroy model user
+rake test or rspec spec
+~~~
+
+~~~bash
+# Ember
+ember new myapp
+ember server
+ember generate model user
+ember destroy model user
+ember test
+~~~
 
 ### Generators
 Like in Rails, generators exist to help you get started and follow conventions. If you use them, you won’t have to think about where a file should go, what it should be named, or worry about what things like `export default` mean right away.
