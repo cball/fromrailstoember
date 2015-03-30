@@ -31,7 +31,7 @@ Router.map(function() {
 
 // app/routes/user.js
 export default Ember.Route.extend({
-  model: function() {
+  model: function(params) {
     return this.store.find('user', params.user_id);
   }
 });

@@ -40,7 +40,11 @@
           <% unless current_article.published? %>
             <h3 style="color: #A72C38;">DRAFT!</h3>
           <% end %>
+
           <%= yield %>
+
+          <p class="last-updated">Updated: <%= current_article.date.strftime('%b %e %Y') %></p>
+
           <div id="article-nav">
             <% prev_article = current_article.previous_article %>
             <% next_article = current_article.next_article %>
@@ -63,6 +67,7 @@
           </div>
         </div>
       </div>
+
 
       <% if next_article.nil? %>
         <%= partial 'no-more' %>

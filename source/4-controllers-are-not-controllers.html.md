@@ -14,7 +14,7 @@ Here’s an example:
 // app/routes/categories/index.js
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('categories');
+    return this.store.find('category');
   }
 });
 

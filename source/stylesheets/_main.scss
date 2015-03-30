@@ -254,3 +254,16 @@ input[type="submit"][disabled] {
     width: 100%;
   }
 }
+
+table {
+  font-size: 0.9em;
+  margin: 30px 0;
+
+  code {
+    padding-left: 0;
+  }
+}
+
+td {
+  padding: 2px 20px 2px 0;
+}
