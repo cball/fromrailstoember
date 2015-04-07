@@ -28,6 +28,7 @@
 
   img {
     max-width: 100%;
+    margin-top: 10px;
   }
 }
 
@@ -71,3 +72,17 @@ a.all-tips-link {
 sup {
   padding-left: 2px;
 }
+
+.more-margin {
+  img {
+    margin: 20px auto;
+  }
+}
+
+.image-annotation {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
