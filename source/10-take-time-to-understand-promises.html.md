@@ -12,7 +12,7 @@ Ember makes heavy use of promises through the [RSVP.js](https://github.com/tilde
 Promises are most commonly used by chaining a `then` function after the promise. For example:
 
 ~~~js
-let promise = new RSVP.Promise((resolve, reject) => {
+let promise = new Ember.RSVP.Promise((resolve, reject) => {
   // do some stuff
   if (success) {
     resolve(thing);
@@ -46,7 +46,7 @@ Promises can also be chained:
 
 ~~~js
 promise.then(thing) => {
-  return new RSVP.Promise((resolve) => {
+  return new Ember.RSVP.Promise((resolve) => {
     let another = doStuff();
     resolve(another);
   });
@@ -102,6 +102,9 @@ export default Ember.Route.extend({
   }
 });
 ~~~
+
+If the ES6 syntax of `model()` is new to you, check out [Babel](http://babeljs.io/docs/learn-es6/#enhanced-object-literals). Babel is available in every ember-cli project.
+{: .image-annotation}
 
 ### Using promises in model hooks
 
