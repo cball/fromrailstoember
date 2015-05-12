@@ -22,8 +22,8 @@ end
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = 'fromrailstoember.com'
-  deploy.path   = '/src/fromrailstoember.com'
-  deploy.user  = 'root'
+  deploy.path   = ENV.fetch('DEPLOY_PATH')
+  deploy.user  = ENV.fetch('DEPLOY_USER')
   deploy.build_before = true
   # deploy.clean = true # remove orphaned files on remote host, default: false
   # deploy.port  = 5309 # ssh port, default: 22
