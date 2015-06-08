@@ -12,21 +12,20 @@ CoffeeScript, like Ruby, returns the last line of a function. This lets you avoi
 
 ~~~coffee
 # routes/application.coffee
-ApplicationRoute = Ember.Route.extend(
+ApplicationRoute = Ember.Route.extend
   actions:
-    doSomething: () =>
-      @set("something", "done")
-)
+    doSomething: ->
+      @set 'something', 'done'
 ~~~
 
 In this example, `@set` returns the Application Route instance, so it is considered truthy. As a result, the action will bubble up to the parent route until it is handled. If you do not want that behavior, you must add a return statement as the final line to avoid the implicit return.
 
 ~~~coffee
 # routes/application.coffee
-ApplicationRoute = Ember.Route.extend(
+ApplicationRoute = Ember.Route.extend
   actions:
-    doSomething: () =>
-      @set("something", "done")
+    doSomething: ->
+      @set 'something', 'done'
       return
 ~~~
 
@@ -37,10 +36,10 @@ Here's the same action in JavaScript (using ES6 syntax):
 export default Ember.Route.extend({
   actions: {
     doSomething() {
-      this.set("something", "done");
+      this.set('something', 'done');
     }
   }
-})
+});
 ~~~
 
 ### CoffeeScript Gotcha #2 - The code you debug is different than the code you write
@@ -99,7 +98,7 @@ Fat arrows are used in CoffeeScript to keep the outer context of `this` when def
 ~~~coffee
 # routes/people.coffee
 people.map (person) =>
-  thing = @get('thing')
+  thing = @get 'thing'
   person.doSomething(thing)
 ~~~
 
@@ -117,10 +116,9 @@ There is no skinny arrow function in ES6, only the fat arrow. However, there is 
 
 ~~~coffee
 # routes/application.coffee
-ApplicationRoute = Ember.Route.extend(
+ApplicationRoute = Ember.Route.extend
   model: (params) ->
-    this.store.find('person', params)  
-)
+    @store.find 'person', params
 ~~~
 
 ~~~js
@@ -140,7 +138,7 @@ The syntax for destructuring is almost identical in CoffeeScript and JavaScript.
 # models/person.coffee
 { attr, hasMany } = DS
 
-Person = Ember.Model.extend(
+Person = DS.Model.extend(
   firstName: attr('string'),
   friends: hasMany('friend')
 )
@@ -152,7 +150,7 @@ Person = Ember.Model.extend(
 // models/person.js
 let { attr, belongsTo } = DS;
 
-export default Ember.Model.extend({
+export default DS.Model.extend({
   firstName: attr('string'),
   friends: hasMany('friend')
 })
