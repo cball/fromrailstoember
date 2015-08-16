@@ -271,3 +271,13 @@ table {
 td {
   padding: 2px 20px 2px 0;
 }
+
+pre {
+  margin: 30px 0;
+  word-break: normal;
+  word-wrap: normal;
+
+  code {
+    white-space: pre;
+  }
+}

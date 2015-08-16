@@ -35,7 +35,7 @@ page "/feed.xml", layout: false
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 
-activate :syntax
+# activate :syntax
 
 ###
 # Compass
