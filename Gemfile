@@ -10,6 +10,7 @@ gem "middleman-imageoptim"
 gem "middleman-syntax"
 gem "nokogiri"
 gem 'middleman-deploy', '~> 1.0'
+gem 'dotenv'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
